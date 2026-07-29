@@ -63,4 +63,8 @@ This project is currently under active development.
 
 ## 📄 License
 
+<<<<<<< HEAD
 This project is licensed under the MIT License.
+=======
+This project is licensed under the MIT License.
+>>>>>>> fbb10e9 (docs: initialize product documentation)
