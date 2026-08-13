@@ -80,6 +80,43 @@ export default function Home() {
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
+
+            {/* How It Works */}
+      <section id="how-it-works" className="px-8 py-20">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          How It Works
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto text-center">
+          <div>
+            <div className="text-4xl font-bold text-gray-300 mb-3">01</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Upload Your Resume
+            </h3>
+            <p className="text-gray-600">
+              Submit your resume in just a few clicks.
+            </p>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-gray-300 mb-3">02</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              AI Analyzes It
+            </h3>
+            <p className="text-gray-600">
+              Our AI evaluates content, structure, and ATS compatibility.
+            </p>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-gray-300 mb-3">03</div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Improve Your Resume
+            </h3>
+            <p className="text-gray-600">
+              Apply actionable recommendations to stand out.
+            </p>
+          </div>
+        </div>
+      </section>
+              
         </div>
       </section>
     </main>
