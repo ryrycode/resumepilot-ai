@@ -135,6 +135,22 @@ export default function Home() {
           </p>
         </div>
       </section>
+      
+      {/* CTA */}
+      <section className="px-8 py-20 text-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Ready to Improve Your Resume?
+        </h2>
+        <button className="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800">
+          Analyze My Resume
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-8 py-8 border-t border-gray-200 text-center text-gray-500">
+        <p>© 2026 ResumePilot AI. All rights reserved.</p>
+      </footer>
+      
     </main>
   );
 }
