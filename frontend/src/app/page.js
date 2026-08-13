@@ -80,6 +80,8 @@ export default function Home() {
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
+          </div>
+      </section>
 
             {/* How It Works */}
       <section id="how-it-works" className="px-8 py-20">
@@ -116,7 +118,21 @@ export default function Home() {
           </div>
         </div>
       </section>
-              
+
+            {/* Problem / Solution */}
+      <section id="about" className="px-8 py-20 bg-gray-50">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+            Not Sure If Your Resume Is Working?
+          </h2>
+          <ul className="text-gray-600 space-y-3 mb-10 text-lg">
+            <li>What's weak about my resume?</li>
+            <li>Will an ATS even understand it?</li>
+            <li>Why isn't my resume getting results?</li>
+          </ul>
+          <p className="text-2xl font-semibold text-gray-900">
+            Turn uncertainty into actionable feedback.
+          </p>
         </div>
       </section>
     </main>
