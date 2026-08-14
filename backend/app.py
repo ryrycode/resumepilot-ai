@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from dotenv import load_dotenv
@@ -23,6 +23,40 @@ class User(db.Model):
 @app.route("/")
 def home():
     return {"message": "ResumePilot AI backend is running"}
+
+
+@app.route("/signup", methods=["POST"])
+def signup():
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+
+    if not email or not password:
+        return jsonify({"error": "Email and password are required"}), 400
+
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        return jsonify({"error": "Email already registered"}), 409
+
+    password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
+    new_user = User(email=email, password_hash=password_hash)
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({"message": "User created successfully", "email": email}), 201
+
+
+@app.route("/login", methods=["POST"])
+def login():
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("password")
+
+    user = User.query.filter_by(email=email).first()
+    if not user or not bcrypt.check_password_hash(user.password_hash, password):
+        return jsonify({"error": "Invalid email or password"}), 401
+
+    return jsonify({"message": "Login successful", "email": email}), 200
 
 
 if __name__ == "__main__":
