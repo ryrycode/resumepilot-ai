@@ -38,6 +38,13 @@ export default function Dashboard() {
     <main className="flex flex-col items-center justify-center min-h-screen px-8 text-center">
       <h1 className="text-2xl font-bold text-gray-900 mb-4">Dashboard</h1>
       <p className="text-gray-600 mb-8">{message}</p>
+
+      <a
+        href="/upload"
+        className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 mb-4"
+      >
+        Upload Resume
+      </a>
       <button
         onClick={handleLogout}
         className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800"
