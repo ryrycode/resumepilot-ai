@@ -1,4 +1,38 @@
 export default function Home() {
+  const plans = [
+    {
+      name: "Free",
+      price: "₱0",
+      period: "forever",
+      description: "Everything you need to get started.",
+      features: [
+        "Resume upload",
+        "Basic ATS score",
+        "Basic AI feedback",
+        "Key resume issues highlighted",
+        "Actionable suggestions",
+      ],
+      cta: "Get Started Free",
+      highlighted: false,
+    },
+    {
+      name: "Pro",
+      price: "₱99",
+      period: "/month",
+      description: "For students who want deeper insights.",
+      features: [
+        "Everything in Free",
+        "More AI analyses per month",
+        "Detailed ATS optimization",
+        "Job description matching",
+        "AI-assisted resume rewriting",
+        "Resume history",
+      ],
+      cta: "Upgrade to Pro",
+      highlighted: true,
+    },
+  ];
+
   const features = [
     {
       title: "AI Resume Analysis",
@@ -144,6 +178,59 @@ export default function Home() {
         <button className="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800">
           Analyze My Resume
         </button>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="px-8 py-20">
+        <div className="text-center mb-4">
+          <h2 className="text-3xl font-bold text-gray-900">
+            Start Free. Upgrade When You Need More.
+          </h2>
+          <p className="text-gray-600 mt-3 max-w-xl mx-auto">
+            Built for students and job seekers. Affordable tools for your next opportunity.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mt-12">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`rounded-lg p-8 border ${
+                plan.highlighted
+                  ? "border-gray-900 border-2 bg-white"
+                  : "border-gray-200 bg-white"
+              }`}
+            >
+              {plan.highlighted && (
+                <span className="inline-block bg-gray-900 text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                  Recommended
+                </span>
+              )}
+              <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+              <p className="text-gray-600 text-sm mt-1 mb-4">{plan.description}</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                <span className="text-gray-500 text-sm"> {plan.period}</span>
+              </div>
+              <ul className="space-y-2 mb-8 text-left">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="text-gray-600 text-sm flex items-start gap-2">
+                    <span aria-hidden="true">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button
+                className={`w-full py-2 rounded-lg font-medium ${
+                  plan.highlighted
+                    ? "bg-gray-900 text-white hover:bg-gray-800"
+                    : "border border-gray-300 text-gray-900 hover:bg-gray-50"
+                }`}
+              >
+                {plan.cta}
+              </button>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Footer */}
