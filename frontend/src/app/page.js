@@ -67,6 +67,7 @@ export default function Home() {
         <div className="text-xl font-bold text-gray-900">ResumePilot AI</div>
         <div className="hidden md:flex gap-8 text-gray-600">
           <a href="#features" className="hover:text-gray-900">Features</a>
+          <a href="#pricing" className="hover:text-gray-900">Pricing</a>
           <a href="#how-it-works" className="hover:text-gray-900">How It Works</a>
           <a href="#about" className="hover:text-gray-900">About</a>
         </div>
